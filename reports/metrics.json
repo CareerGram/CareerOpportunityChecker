@@ -1,0 +1,93 @@
+{
+  "project": "CareerGram Opportunity Checker",
+  "dataset_summary": {
+    "rows_before_deduplication": 17880,
+    "exact_duplicate_rows_removed": 330,
+    "rows_after_deduplication": 17550,
+    "legitimate_count": 16694,
+    "fraudulent_count": 856,
+    "fraudulent_rate": 0.048774928774928776,
+    "features_used": [
+      "combined text from title, location, department, salary_range, company_profile, description, requirements, benefits, employment_type, required_experience, required_education, industry, function, telecommuting, has_company_logo, has_questions"
+    ],
+    "identifier_excluded": "job_id"
+  },
+  "split_summary": {
+    "train_rows": 11407,
+    "validation_rows": 2633,
+    "test_rows": 3510,
+    "strategy": "stratified random split after exact duplicate removal; dataset does not provide a usable posting timestamp",
+    "random_state": 42
+  },
+  "validation_model_comparison": {
+    "logistic_regression": {
+      "accuracy": 0.9882263577668059,
+      "fraud_precision": 0.907563025210084,
+      "fraud_recall": 0.84375,
+      "fraud_f1": 0.8744939271255061,
+      "average_precision": 0.9199187443012753,
+      "roc_auc": 0.9873315868263473
+    },
+    "multinomial_nb": {
+      "accuracy": 0.9608811241929358,
+      "fraud_precision": 0.8378378378378378,
+      "fraud_recall": 0.2421875,
+      "fraud_f1": 0.37575757575757573,
+      "average_precision": 0.6194829237378034,
+      "roc_auc": 0.940369261477046
+    }
+  },
+  "selected_model": "logistic_regression",
+  "test_metrics": {
+    "split": "test",
+    "accuracy": 0.9868945868945869,
+    "fraud_precision": 0.8881987577639752,
+    "fraud_recall": 0.8362573099415205,
+    "fraud_f1": 0.8614457831325302,
+    "average_precision": 0.9258265425748856,
+    "roc_auc": 0.9908383817685373,
+    "classification_report": {
+      "legitimate": {
+        "precision": 0.9916392953120334,
+        "recall": 0.9946091644204852,
+        "f1-score": 0.993122009569378,
+        "support": 3339.0
+      },
+      "fraudulent": {
+        "precision": 0.8881987577639752,
+        "recall": 0.8362573099415205,
+        "f1-score": 0.8614457831325302,
+        "support": 171.0
+      },
+      "accuracy": 0.9868945868945869,
+      "macro avg": {
+        "precision": 0.9399190265380043,
+        "recall": 0.9154332371810028,
+        "f1-score": 0.9272838963509541,
+        "support": 3510.0
+      },
+      "weighted avg": {
+        "precision": 0.9865998845084101,
+        "recall": 0.9868945868945869,
+        "f1-score": 0.9867070139224546,
+        "support": 3510.0
+      }
+    },
+    "confusion_matrix_labels": [
+      "legitimate",
+      "fraudulent"
+    ],
+    "confusion_matrix": [
+      [
+        3321,
+        18
+      ],
+      [
+        28,
+        143
+      ]
+    ]
+  },
+  "model_path": "models\\best_model.joblib",
+  "caution": "Historical benchmark only. The dataset has no usable timestamp in this copy, so results use a stratified holdout, not a future-time evaluation. Do not treat predictions as proof of fraud or assume current real-world performance."
+}
