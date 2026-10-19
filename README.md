@@ -77,7 +77,6 @@ CareerOpportunityChecker/
 │   ├── test_explainability.py
 │   ├── test_lime_explainer.py
 │   └── test_resume_matcher.py
-├── career_opportunity_checker_architecture.html
 ├── requirements.txt
 └── README.md
 ```
