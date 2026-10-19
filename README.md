@@ -15,14 +15,6 @@ Career Opportunity Checker is a learning project that helps users review job des
 - Streamlit user interface and FastAPI backend.
 - Automated tests with Pytest.
 
-## Interactive System Architecture
-
-Explore the components by clicking each box, or use the filters to focus on the frontend, backend/model, or explanation tools:
-
-**[Open the interactive system architecture](career_opportunity_checker_architecture.html)**
-
-The interactive diagram is a separate HTML file because GitHub README pages do not run custom JavaScript or interactive widgets directly. Keep `career_opportunity_checker_architecture.html` in the same repository folder as this README for the relative link above to work.
-
 ### Static architecture diagram
 
 GitHub can render the following Mermaid diagram directly in this README:
